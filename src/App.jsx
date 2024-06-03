@@ -20,7 +20,7 @@ function App() {
       }
     })
     .finally(() => setLoading(false))
-  }, [])
+  })
 
   return !loading ? (
     <div className="min-h-screen flex flex-wrap content-between bg-gray-700">
