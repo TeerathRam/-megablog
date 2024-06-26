@@ -61,7 +61,7 @@ export class Service{
             )
             return true
         } catch (error) {
-            throw error
+            console.log("Appwrite service :: deletePost :: :: error", error)
             return false
         }
     }
@@ -74,12 +74,12 @@ export class Service{
                 slug
             )
         } catch (error) {
-            throw error
+            console.log("Appwrite service :: getPost :: :: error", error)
             return false
         }
     }
-        // have a bug which i have to fix later
-    async getPosts(queries= [Query.equal("status",["active"])]) {
+        
+    async getPosts(queries= [Query.equal("status","active")]) {
         try {
             return await this.databases.listDocuments(
                 config.appwriteDatabaseId,
@@ -87,7 +87,7 @@ export class Service{
                 queries
             )       
         } catch (error) {
-            throw error
+            console.log("Appwrite service :: getPosts :: :: error", error)
             return false
         }
     }
@@ -102,7 +102,7 @@ export class Service{
                 file
             )
         } catch (error) {
-            console.log("Appwrite service :: uploadFile :: error", error)
+            console.log("Appwrite service :: uploadFile :: :: error", error)
             return false
         }
     } 
@@ -115,7 +115,7 @@ export class Service{
             )
             return true
         } catch (error) {
-            console.log("Appwrite service :: uploadFile :: error", error)
+            console.log("Appwrite service :: deleteFile :: :: error", error)
             return false
         }
     }
@@ -127,7 +127,7 @@ export class Service{
                 fileId   
             )
         } catch (error) {
-            console.log("Appwrite service :: uploadFile :: error", error)
+            console.log("Appwrite service :: getFilePreview :: :: error", error)
             return false
         }
     }

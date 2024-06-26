@@ -12,6 +12,7 @@ import RTE from "./RTE";
 import Input from "./Header/Input"
 import Select from "./Select"
 import PostForm from "./post-form/PostForm"
+import AuthLayout from "./AuthLayout"
 
 export {
     Footer,
@@ -26,6 +27,7 @@ export {
     Protected,
     RTE,
     PostForm,
+    AuthLayout,
     Input,
     Select
 }

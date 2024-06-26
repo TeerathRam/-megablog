@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux"
 import authService from "./appwrite/auth"
 import { login, logout } from "./store/authSlice"
 import './App.css'
-import { Footer, Header } from "./components"
+import { Footer, Header } from "./components/index"
 import { Outlet } from "react-router-dom"
 
 function App() {
@@ -13,6 +13,7 @@ function App() {
   useEffect(() => {
     authService.getCurrentUser()
     .then((userData) => {
+      console.log("USER", userData) // check for userData
       if (userData) {
         dispatch(login({userData}))
       } else {
@@ -27,7 +28,7 @@ function App() {
       <div className="w-full">
         <Header />
         <main>
-        {/* <Outlet /> */}
+          <Outlet />
         </main>
         <Footer />
       </div>

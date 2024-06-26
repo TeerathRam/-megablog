@@ -24,16 +24,16 @@ function Header() {
       slug: "/signup",
       active: !authStatus
     },
-    {
-      name: "All Post",
-      slug: "/all-post",
-      active: !authStatus
-    },
-    {
-      name: "Add Post",
-      slug: "/add-post",
-      active: !authStatus
-    }
+    // {
+    //   name: "All Post",
+    //   slug: "/all-post",
+    //   active: !authStatus
+    // },
+    // {
+    //   name: "Add Post",
+    //   slug: "/add-post",
+    //   active: !authStatus
+    // }
   ]
 
   return (
