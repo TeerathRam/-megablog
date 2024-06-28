@@ -45,7 +45,7 @@ export default function Post() {
                     {isAuthor && (
                         <div className="absolute right-6 top-6">
                             <Link to={`/edit-post/${post.$id}`}>
-                                <Button bgColor="bg-green-500" className="mr-3">
+                                <Button classname="mr-3" bgColor="bg-green-500">
                                     Edit
                                 </Button>
                             </Link>
