@@ -5,7 +5,6 @@ import { Button, Input, Logo } from "./index"
 import { useDispatch } from 'react-redux'
 import authService from "../appwrite/auth"
 import { useForm } from 'react-hook-form'
-import { data } from 'autoprefixer'
 
 function Login() {
     const [error, setError] = useState("")
@@ -19,7 +18,7 @@ function Login() {
             const session = await authService.login(data)
             if (session) {
                 const userData = await authService.getCurrentUser()
-                if (userData) dispatch(authLogin(userData));
+                if (userData) dispatch(authLogin({userData}));
                 navigate("/")
             }
         } catch (error) {
