@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { logout } from "../../store/authSlice"
 import authService from "../../appwrite/auth" // check for correct import
@@ -6,10 +7,12 @@ import {Button } from "../index"
 
 function LogoutBtn() {
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const logoutHandler = () => {
       authService.logout().then(() => {
           dispatch(logout())
+          navigate("/")
       })
   }
 
