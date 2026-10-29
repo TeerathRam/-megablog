@@ -15,9 +15,11 @@ import {
 	Post,
 } from "./pages/index.js";
 
+// confire browser route
 const router = createBrowserRouter([
 	{
 		path: "/",
+
 		element: <App />,
 		children: [
 			{
@@ -77,5 +79,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 		<Provider store={store}>
 			<RouterProvider router={router} />
 		</Provider>
-	</React.StrictMode>
+	</React.StrictMode>,
 );

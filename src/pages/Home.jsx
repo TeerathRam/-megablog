@@ -6,6 +6,7 @@ function Home() {
 	const [posts, setPosts] = useState([]);
 
 	useEffect(() => {
+		// get all active post
 		appwriteService.getPosts().then((posts) => {
 			if (posts) {
 				setPosts(posts.documents);
@@ -15,11 +16,11 @@ function Home() {
 
 	if (posts.length === 0) {
 		return (
-			<div className="w-full py-8 my-4 text-center bg-rose-300">
+			<div className="w-full mx-auto py-8 my-4 text-center bg-transparent">
 				<Container>
-					<div className="flex flex-wrap">
+					<div className="h-[427px] rounded-xl bg-white ">
 						<div className="p-2 w-full">
-							<h1 className="text-2xl font-bold hover:text-gray-500">
+							<h1 className="text-5xl font-bold hover:text-gray-500">
 								Login to read posts
 							</h1>
 						</div>
@@ -30,11 +31,11 @@ function Home() {
 	}
 
 	return (
-		<div className="w-full py-8">
+		<div className="w-full">
 			<Container>
 				<div className="flex flex-wrap flex-col items-center sm:flex-row">
 					{posts.map((post) => (
-						<div key={post.$id} className="p-2 w-full sm:w-1/3">
+						<div key={post.$id} className="m-2 w-full sm:w-1/3">
 							<PostCard {...post} />
 						</div>
 					))}
